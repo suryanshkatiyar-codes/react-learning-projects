@@ -1,0 +1,29 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  font-family: Arial, sans-serif;
+}
+
+.card{
+  color: red;
+  margin: 10px;
+  background-color: black;
+  border-radius: 15px;
+  padding: 20px;
+}
+
+.navbar{
+  color: pink;
+  margin: 10px;
+  background-color: black;
+  border-radius: 15px;
+  padding: 20px;
+}
+
