@@ -101,6 +101,26 @@ const App = () => {
     tag2: "Senior Level",
     pay: 90,
     location: "Remote, India"
+  },
+    {
+    brandLogo: "https://as2.ftcdn.net/jpg/02/50/30/59/1000_F_250305943_sDC6la1N1fDl3bLgfLxOkQwItIodsdMb.jpg",
+    company: "Github",
+    datePosted: "1 weeks ago",
+    post: "UI Developer",
+    tag1: "Full Time",
+    tag2: "Junior Level",
+    pay: 85,
+    location: "Bangalore, India"
+  },
+    {
+    brandLogo: "https://img.freepik.com/premium-vector/round-linkedin-logo-isolated-white-background_469489-985.jpg?semt=ais_hybrid&w=740&q=80",
+    company: "Linked in",
+    datePosted: "12 weeks ago",
+    post: "Frontend Engineer",
+    tag1: "Part Time",
+    tag2: "Intermediate Level",
+    pay: 85,
+    location: "Remote, India"
   }
 ];
 
@@ -108,7 +128,7 @@ const App = () => {
     <div className='parent'>
       {jobOpenings.map(function(elem,idx){
         return <div key={idx}>
-        <Card company={elem.company} post={elem.post} tag1={elem.tag1} tag2={elem.tag2} pay={elem.pay} brandLogo={elem.brandLogo} datePosted={elem.datePosted}/>
+        <Card company={elem.company} post={elem.post} tag1={elem.tag1} tag2={elem.tag2} pay={elem.pay} brandLogo={elem.brandLogo} datePosted={elem.datePosted} location={elem.location}/>
         </div>
       })}
     </div>
