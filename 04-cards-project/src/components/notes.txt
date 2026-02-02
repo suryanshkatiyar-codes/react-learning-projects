@@ -1,0 +1,15 @@
+RAFCE in React.js stands for:
+
+R – React
+A – Arrow
+F – Function
+C – Component
+E – Export
+What it means (simple words):
+
+rafce is a VS Code snippet that quickly creates a React functional component using an arrow function and exports it.
+vh => viewport height
+100vh means 100% of the view port height in simple words full height of the visible screen
+flex-wrap: wrap allows flex items to move onto the next line when there isn’t enough space in a single row.
+
+key={idx} so that react can uniquely identify each element 
