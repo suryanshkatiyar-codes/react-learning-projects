@@ -50,3 +50,12 @@ const App = () => {
 export default App
 
 in the above snippet the problem was that we can not call the function with values because if we pass the value in function it will automatically be called in onclick so we decide to put the function inside the function so that it can be called multiple times with values on onClick
+
+Hooks:-
+
+useState-state ko manage krne ke liye
+useEffect-side effects handle karne ke liye (jaise Api call,DOM manipulation,eventlistner)
+useContext-global state ko consume krne ke liye without prop drilling
+useReducer-complex state management ke liye (Redux jaisa chota version)
+useRef-mutable values hold krne ke liye jo rerender trigger na karein ,ya DOM access krne ke liye
+useMemo and useCallback-optimiztaion ke liye,unnecessary renders avoid krne ke liye
