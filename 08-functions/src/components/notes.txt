@@ -1,0 +1,52 @@
+just in case if u a are getting 2 values for one call in the console just remove strictmode in main.jsx
+
+//Snippet 1;
+
+import React from 'react'
+
+const App = () => {
+  function btnClicked(){
+    console.log("button is clicked");
+  }
+  function mouseEnter(){
+    console.log("mouse entered");
+  }
+  return (
+    <div>
+      <button onMouseEnter={mouseEnter} onClick={btnClicked}>Click here</button>
+      <button onMouseEnter={()=>{
+        console.log("sup");
+      }}>Click here dummy</button>
+    </div>
+  )
+}
+
+export default App
+
+// in line 16 if u call that function like btnClicked() in onclick then it will run automatically  without clicking
+
+// Snippet 2
+
+import React from 'react'
+
+const App = () => {
+
+  function inputChanging(val){
+    console.log(val);
+  }
+
+  return (
+    <div>
+      <input 
+      onChange={(elem)=>{
+        inputChanging(elem.target.value);
+      }} 
+      type="text" 
+      placeholder='Enter your name' />
+    </div>
+  )
+}
+
+export default App
+
+in the above snippet the problem was that we can not call the function with values because if we pass the value in function it will automatically be called in onclick so we decide to put the function inside the function so that it can be called multiple times with values on onClick
