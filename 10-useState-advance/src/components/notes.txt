@@ -1,0 +1,94 @@
+import React, { useState } from 'react'
+
+const App = () => {
+
+  const [num,setNum]=useState(10);
+
+  const btnClicked =()=>{
+    console.log(num);
+    setNum(20);  
+    console.log(num);
+  }
+
+  return (
+    <div>
+      <h1>sup</h1>
+      <button onClick={btnClicked}>click</button>
+    </div>
+  )
+}
+
+export default App
+
+in line 9 setNum works asynchronously so it will be updated on the ui right away but will take time to update on the console
+
+note-arrays functions and objects are reference variables (stores refernces and the refernces point somewhere in the memory where the actual data is stored)
+
+import React, { useState } from 'react'
+
+const App = () => {
+
+  const [num,setNum]=useState({name:"ryu" ,age:20});
+
+  const btnClicked =()=>{
+    const newNum={...num};
+    newNum.name="l";
+    newNum.age=29;
+    setNum(newNum);
+  }
+
+  return (
+    <div>
+      <h1>{num.name}{num.age}</h1>
+      <button onClick={btnClicked}>click</button>
+    </div>
+  )
+}
+
+export default App
+
+
+import React, { useState } from 'react'
+
+const App = () => {
+
+  const [num,setNum]=useState([10,20,30]);
+
+  const btnClicked =()=>{
+    const newNum=[...num];
+    newNum.push(99);
+    setNum(newNum);
+  }
+
+  return (
+    <div>
+      <h1>{num}</h1>
+      <button onClick={btnClicked}>click</button>
+    </div>
+  )
+}
+
+export default App
+
+import React, { useState } from 'react'
+
+const App = () => {
+
+  const [num,setNum]=useState({name:"W",age:17});
+
+  const btnClicked =()=>{
+    setNum(prev=>({...prev,age:50}));
+  }
+
+  return (
+    <div>
+      <h1>{num.name}{num.age}</h1>
+      <button onClick={btnClicked}>click</button>
+    </div>
+  )
+}
+
+export default App
+
+
+
