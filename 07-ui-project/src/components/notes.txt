@@ -1,0 +1,52 @@
+Atomic-based vs Feature-based are two different ways to organize frontend code, especially in React.
+
+Atomic-based (Atomic Design)
+
+Organizes UI by component size and reusability.
+
+Atoms → buttons, inputs, icons
+
+Molecules → input + label, card header
+
+Organisms → navbar, form section
+
+Templates / Pages → full layouts
+
+Best when:
+You want highly reusable UI components and a design-system mindset.
+
+In one line:
+Structure by UI complexity and reusability.
+
+Feature-based
+
+Organizes code by application functionality.
+
+auth/ → login, register, auth logic
+
+dashboard/ → charts, tables, services
+
+profile/ → profile page, API, styles
+
+Each feature contains its components, hooks, styles, API.
+
+Best when:
+Apps are large, scalable, and worked on by teams.
+
+In one line:
+Structure by what the app does, not by component size.
+
+Quick verdict
+
+Atomic-based → design-focused, reusable UI
+
+Feature-based → scalable, maintainable apps
+
+👉 Many real projects combine both: atomic components inside feature folders.
+
+How to use remix icon;
+
+Go to remix icon github readme then copy the command and run it
+and after that copy the import command paste in the file and then select the icon that u want and paste it into the div and then change class to className
+
+unsplash for raw images
