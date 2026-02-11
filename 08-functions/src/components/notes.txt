@@ -49,6 +49,15 @@ const App = () => {
 
 export default App
 
+in line 41 elem is the event object automatically passed by React to the onChange handler.
+It contains details about the event, and elem.target.value gives the current value of the input field.
+
+An event is an action triggered by the user or browser, such as a click, key press, or input change.
+
+In React, when an event occurs, React captures the browser’s native event, wraps it in a SyntheticEvent, and automatically passes it as an argument to the event handler function (like onClick or onChange).
+
+We receive this event object as a parameter (commonly e), which gives access to details like e.target and e.target.value.
+
 in the above snippet the problem was that we can not call the function with values because if we pass the value in function it will automatically be called in onclick so we decide to put the function inside the function so that it can be called multiple times with values on onClick
 
 Hooks:-
