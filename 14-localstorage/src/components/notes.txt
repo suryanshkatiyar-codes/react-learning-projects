@@ -1,0 +1,4 @@
+localstorage-browser ki memory
+kuch information store kra skte hai browser ke andar jaise login info
+session storage - jab tak session chal rha hai tab tak data store hai session end (website closed) data disappear
+when storing something in localstorage using key value pair then the value should be a string
