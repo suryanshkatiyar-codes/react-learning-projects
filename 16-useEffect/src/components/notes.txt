@@ -1,0 +1,108 @@
+react ki rendering process ui banane ka kaam krti hai agr uske sath extra kaam krna hai to useeffect will provide a footpath where it will store store the side processes  aur fir jab react ki rendering ho jayegi uske baad unhe chalayegi in the order that they were defined for that it uses react's own effect queue;
+
+The sequence is:
+
+Component renders
+React updates the DOM
+Browser paints the screen
+useEffect runs
+
+usecases first mounting jab jab state change ho rhi hai tab tab useeffect chal rha hai that is :-
+
+import React, { useEffect, useState } from 'react'
+
+const App = () => {
+
+  const [num,setNum]=useState(0);
+
+  useEffect(()=>{
+    console.log('useEffect is running');
+  })
+
+  return (
+    <div>
+      <div>{num}</div>
+      <button onClick={()=>{
+        setNum(num + 1);
+      }}>Click here</button>
+    </div>
+  )
+}
+
+export default App
+
+now if u only wanted to run for one time pass dependency array (empty) that is:-
+
+import React, { useEffect, useState } from 'react'
+
+const App = () => {
+
+  const [num,setNum]=useState(0);
+
+  useEffect(()=>{
+    console.log('useEffect is running');
+  },[])
+
+  return (
+    <div>
+      <div>{num}</div>
+      <button onClick={()=>{
+        setNum(num + 1);
+      }}>Click here</button>
+    </div>
+  )
+}
+
+export default App
+
+now if u want to run the useEffect for changing of one state only + on mount too use this that is pass the variable in the dependency array:-
+
+import React, { useEffect, useState } from 'react'
+
+const App = () => {
+
+  const [num,setNum]=useState(0);
+  const [num2,setNum2]=useState(0);
+
+  useEffect(()=>{
+    console.log('useEffect is running');
+  },[num])
+
+  return (
+    <div>
+      <div>{num}</div>
+      <div>{num2}</div>
+      <button onMouseLeave={()=>{
+        setNum2(num2+10);
+      }} onMouseEnter={()=>{
+        setNum(num + 1);
+      }
+      }>Click here</button>
+    </div>
+  )
+}
+
+export default App
+
+
+Here are some more info that is:-
+
+2. Common Use Cases:
+
+API calls (data fetching)
+Setting up subscriptions (WebSocket, event listeners)
+Timers (setTimeout, setInterval)
+Direct DOM manipulation
+Logging/analytics
+
+3. Rules:
+
+Never mutate state directly inside useEffect without proper conditions (causes infinite loops)
+Always include all dependencies that the effect uses
+Don't use async/await directly in useEffect callback (use an inner async function instead)
+
+4. Infinite Loop Warning:
+javascript// ❌ WRONG - Infinite loop!
+useEffect(() => {
+  setNum(num + 1);
+}); // No dependency array, runs after every render
