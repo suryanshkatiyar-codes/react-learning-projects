@@ -1,0 +1,32 @@
+we use react router dom to perform routing 
+how to install it:-
+npm i react-router-dom
+
+react router dom hume multiple types ke router deta hai jaise
+BrowserRouter-uses history api jiski wjh se browser se bhut acche se routing kar pate hai (used most of the time)
+browser me history store krke rkhta hai
+
+sheriyans.com=/
+sheriyans.com/about=/about
+sheriyans.com/courses=/courses
+
+HashRouter-server dont know which route u are talking about
+
+sheriyans.com=/#/
+sheriyans.com/about=/#/about
+sheriyans.com/courses=/courses
+
+MemoryRouter-memory me cheeze store krta hai aur history ka role nhi hota
+
+Agr BrowserRouter ke basis pe kaam krna hai to wrap the App with brower router like i did in main.jsx then after create some pages and then import
+import { Route,Routes } from 'react-router-dom' Routes-container jiske andr saare routes rhenge Route is used for the particular component
+react-router-dom se bnta hai SPA single page application (we can jump to multiple pages without reloading)
+when dealing with routes only the things inside <Routes/> will change the rest will appear on all the pages
+
+<div className='flex gap-5'>
+  <a href="/"><h2>Home</h2></a>
+  <a href="/About"><h2>About</h2></a>
+  <a href="/Contact"><h2>Contact</h2></a>
+</div>
+
+the problem here is this when we go to another page it reload the website every time so in order to fix it use Link provided by react-router-dom
