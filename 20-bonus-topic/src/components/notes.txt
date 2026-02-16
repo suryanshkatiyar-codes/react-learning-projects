@@ -1,0 +1,3 @@
+in props drilling the data flow from top to bottom
+
+but there is a way to do the opposite
