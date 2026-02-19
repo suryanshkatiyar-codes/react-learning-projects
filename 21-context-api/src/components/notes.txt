@@ -1,0 +1,76 @@
+Context api:-
+u can centralized the data instead of passing data component to component (props drilling)
+
+there are 3 components in Context api :-
+Context
+Provider
+useContext
+
+context se wrap krenege app ko to jab bhi data chaiye easy access (river example) aur usko har jagah use kr skte hai jaise jab BrowserRouter se wrap krte hai jisse poore code base me routing ka use kr skte hai
+
+<Navbar/> self closing tag
+<Navbar></Navbar> both are same can be used to pass childrens as props
+
+for children as props just go through the code
+
+import React, { useState } from 'react'
+import Navbar from './components/Navbar'
+import Navbar2 from './components/Navbar2'
+
+const App = () => {
+
+  const [theme,setTheme]=useState('light');
+
+  return (
+    <div className='h-screen bg-black text-white'>
+      <Navbar theme={theme}>
+        <h1>Sup</h1>
+        <h1>yoiii</h1>
+      </Navbar>
+    </div>
+  )
+}
+
+export default App
+
+import React from 'react'
+import Navbar2 from './Navbar2'
+
+const Navbar = ({theme,children}) => { // destructuring
+
+  console.log(children); // if one children then object else u will get array
+
+  return (
+    <div className='flex justify-between items-center p-5 bg-slate-700'>
+      <div>
+        Suryansh
+        {children[0]}
+        {children[0]}
+      </div>
+      <div>
+         <Navbar2 theme={theme}/>
+      </div>
+
+    </div>
+  )
+}
+
+export default Navbar
+
+import React from 'react'
+
+const Navbar2 = (props) => {
+
+  console.log(props);
+
+  return (
+    <div className='flex items-center gap-4'>
+      <h1>Home</h1>
+      <h1>Contact</h1>
+      <h1>About</h1>
+      <h1>{props.theme}</h1>
+    </div>
+  )
+}
+
+export default Navbar2

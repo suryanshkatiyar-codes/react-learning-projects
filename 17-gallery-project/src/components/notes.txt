@@ -1,0 +1,9 @@
+axios ka kaam api ka data ko leke aana api se jo data milega wo json format me hoga json is array of objects internet pe data khi bhi ek jagah se dusri me jaa rha hai to ya to wo json format me hoga ya xml
+
+axios.post() request ko post krta hai based on that data backend will give the response 
+
+axios.get() only want to take data from an api
+
+axios.patch() to update the data for example changing username from suryansh123 to suryansh
+
+axios.delete() delete krne ke liye
